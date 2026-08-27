@@ -1,0 +1,18 @@
+package main;
+
+import java.util.Scanner;
+
+import controller.CustomerController;
+
+public class main {
+
+	public static void main(String[] args) {
+		CustomerController cc = new CustomerController();
+		Scanner in = new Scanner(System.in);
+		while(true) {
+			
+			
+		}
+	}
+
+}

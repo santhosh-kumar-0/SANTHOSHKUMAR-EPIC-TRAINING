@@ -1,0 +1,22 @@
+package multi_dimenstion_array;
+import java.util.Scanner;
+public class multi_dimention_array_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		
+		int n = scan.nextInt();
+		int m = scan.nextInt();
+		int[][] arr = new int[n][m];
+		int arr1 = scan.nextInt(); 
+		
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<m;j++) {
+				System.out.println(arr[i][j]);
+			}
+		}
+
+	}
+
+}

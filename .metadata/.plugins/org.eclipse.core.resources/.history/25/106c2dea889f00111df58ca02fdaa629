@@ -1,0 +1,43 @@
+package controller;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import model.CustomerModel;
+public class CustomerController {
+		ArrayList<CustomerModel> cusArr = new ArrayList<>();
+		int id = 0;
+		
+		public void createCustomer() {
+			Scanner in = new Scanner(System.in);
+			System.out.println("Enter the cusName: ");
+			String name = in.nextLine();
+			System.out.println("Enter the cusEmail:");
+			String email = in.nextLine();
+			CustomerModel cm = new CustomerModel(name, email, id);
+			
+			System.out.println("Customer created successfully....");
+			cusArr.add(cm);
+			id++;	
+}
+		
+		public void displayCustomer() {
+			for(CustomerModel cm : cusArr) {
+				System.out.println(cm.getCusName());
+				System.out.println(cm.getCusMailId());
+			}
+		}
+		
+		public void changeName() {
+			Scanner scan = new Scanner(System.in);
+			
+			System.out.println("Enter the Customer Id : ");
+			int id = scan.nextInt();
+			scan.nextLine();
+			System.out.println("Enter the name to change :");
+			String name = scan.nextLine();
+			
+			cusArr.get(id).setCusName(name);
+			System.out.println("name changes Successfully..");
+		}
+}
+ 

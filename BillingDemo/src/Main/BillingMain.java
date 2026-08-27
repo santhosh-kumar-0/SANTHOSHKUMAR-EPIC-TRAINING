@@ -1,0 +1,16 @@
+package Main;
+import java.util.Scanner;
+
+import controller.CustomerController;
+
+public class BillingMain {
+
+	public static void main(String[] args) {
+		CustomerController cc = new CustomerController();
+		Scanner in = new Scanner(System.in);
+		while(true) {
+			
+		}
+	}
+
+}

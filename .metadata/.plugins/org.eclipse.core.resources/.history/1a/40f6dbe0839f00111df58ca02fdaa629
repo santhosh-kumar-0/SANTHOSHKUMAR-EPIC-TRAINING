@@ -1,0 +1,27 @@
+package controller;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import model.CustomerModel;
+public class CustomerController {
+		ArrayList<CustomerModel> cusArr = new ArrayList<>();
+		int id = 0;
+		
+		public void createCustomer() {
+			Scanner in = new Scanner(System.in);
+			System.out.println("Enter the cusName: ");
+			String name = in.nextLine();
+			System.out.println("Enter the cusEmail:");
+			String email = in.nextLine();
+			CustomerModel cm = new CustomerModel(name, email, id);
+			id++;	
+}
+		
+		public void displayCustomer() {
+			for(CustomerModel cc : cusArr) {
+				System.out.println(cc.getCusName());
+				System.out.println(cc.getCusMailId());
+			}
+		}
+}
+ 

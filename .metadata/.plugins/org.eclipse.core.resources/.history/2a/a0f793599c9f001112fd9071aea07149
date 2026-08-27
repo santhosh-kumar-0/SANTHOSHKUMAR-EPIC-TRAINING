@@ -1,0 +1,81 @@
+package controller;
+import java.util.ArrayList;
+import java.util.Scanner;
+import services.CustomerService;
+import model.CustomerModel;
+
+public class CustomerController implements CustomerService {
+		ArrayList<CustomerModel> cusArr = new ArrayList<>();
+		int id = 0;
+		
+		public void createCustomer() {
+			Scanner in = new Scanner(System.in);
+			System.out.print("Enter the cusName: ");
+			String name = in.nextLine();
+			System.out.print("Enter the cusEmail:");
+			String email = in.nextLine();
+			CustomerModel cm = new CustomerModel(name, email, id);
+			System.out.println("Customer created successfully....");
+			cusArr.add(cm);
+			id++;	
+}
+		
+		public void displayCustomer() {
+			for(CustomerModel cm : cusArr) {
+				System.out.println("Customer Id      : " + cm.getCusId());
+				System.out.println("Customer Name    : " + cm.getCusName());
+				System.out.println("CUstomer Mail Id : " + cm.getCusMailId());
+				System.out.println();
+			}
+		}
+		
+		public void updateCustomer() {
+			Scanner scan = new Scanner(System.in);
+			
+			System.out.println("Enter the Customer Id : ");
+			int id = scan.nextInt();
+			scan.nextLine();
+			
+			while(true) {
+				Scanner SC = new Scanner(System.in);
+				System.out.println("1) changes in name\n2) change in emailId");
+				int choice = SC.nextInt();
+				switch(choice) {
+				case 1:{
+					System.out.print("Enter the name to change :");
+					String name = scan.nextLine();
+					cusArr.get(id).setCusName(name);
+					System.out.println("name changes Successfully..");
+					break;
+				}
+				case 2:{
+					System.out.print("Enter the email to change :");
+					String email = scan.nextLine();
+					cusArr.get(id).setCusMailId(email);
+					System.out.println("email changes Successfully..");
+					break;
+				}
+				}
+				break;
+			}	
+		}
+		
+		public void deleteCustomer() {
+			Scanner scan = new Scanner(System.in);
+			System.out.print("Enter the customer id :");
+			int id = scan.nextInt();
+			int index =0;
+			for(CustomerModel cus : cusArr) {
+				if(cus.getCusId()==id) {
+					cusArr.remove(index);
+					System.out.println("Customer Removed Successfully");
+					break;
+				}
+				index++;
+			}
+		}
+
+		
+		
+}
+ 
